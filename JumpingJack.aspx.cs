@@ -20,46 +20,6 @@ public partial class JumpingJack : System.Web.UI.Page
         }
     }
 
-    private static int maxStep(int skipped,int K,int N)
-    {
-        int currentStep=0;
-        for(int decision=1; decision<=N; decision++)
-        { 
-            //only jump if you do not end up on K step and this is not a decition to skip
-            if(((currentStep + decision) != K)&&(decision != skipped))
-            {
-                currentStep = currentStep+decision;
-            }
-            
-        }
-        return currentStep;
-    }
-
-    public static int topMostStep1(int N, int K)
-    {
-        int topMost = 0;
-        int max=0;
-        int temp=0;
-        //find maximum possible step if no restrictions apply
-        for (int i = 1; i <= N; i++)
-        {
-            max = max + i;
-        }
-        
-        //for each possibly skipped step between 0 and max 
-        //calculate the topSpot and keep the highest
-        for (int i = 0; i <= max; i++)
-        {
-            temp =  maxStep(i,K,N);
-            if (temp > topMost)
-            {
-                topMost = temp;
-            }
-
-        }
-        return topMost;
-    }
-
     public static int topMostStep(int N, int K)
     {
         int topMost;

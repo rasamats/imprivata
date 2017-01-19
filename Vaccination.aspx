@@ -51,6 +51,9 @@
 
                 </td>
                 <td>
+                    <asp:Label ID="Label2" runat="server" Text="Comma separated population numbers in each city:"></asp:Label>
+                </td>
+                <td>
                     <asp:TextBox ID="txtCityPopulation" runat="server" TabIndex="1" Width="100px" Height="16px"/>
                     <asp:RegularExpressionValidator runat="server" ControlToValidate="txtCityPopulation" ErrorMessage="City Population must be numbers separated by comma." 
             ValidationExpression="[0-9]+(,[0-9]+)*" ForeColor="Red"/>
@@ -68,7 +71,8 @@
                             Type="Integer" ValidationGroup="RequiredFields"></asp:RangeValidator>
                 </td>
                 <td></td>
-            </tr>
+                <td></td>
+                </tr>
             <tr>
                 <td colspan="2">
                     <asp:Label ID="lblOutput" runat="server" Text=""></asp:Label>
