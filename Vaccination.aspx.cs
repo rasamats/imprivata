@@ -74,6 +74,10 @@ public partial class Vaccination : System.Web.UI.Page
 
             --remainedClinicCounter;
         }
+        //Sort again to return the largest
+        Array.Sort(cities);
+        Array.Reverse(cities);
+
         return cities[0].Item1;
     }
 }
